@@ -9,7 +9,7 @@
         </div>
         <div class="info">
           <div class="title">
-            <a target="_blank" href={{data.url}}>{{data.name}}</a>
+            <a target="_blank" href={{data.html_url}}>{{data.name}}</a>
           </div>
           <div class="desc">{{data.bio}}</div>
           <div class="desc">Repos: {{data.public_repos}}</div>
@@ -17,7 +17,7 @@
           <div class="desc">Following: {{data.following}}</div>
         </div>
         <div class="bottom">
-          <form>
+          <form (keyup)="handleSubmit($event)" action="#">
             <input type="text" class="form-control" placeholder="introduce a username...">
           </form>
         </div>

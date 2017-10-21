@@ -13,12 +13,22 @@ export class ProfileComponent {
   public data = {};
   constructor (private gitHubServiceProvider: GitHubServiceProvider) {}
 
-  // tslint:disable-next-line:use-life-cycle-interface
-  ngOnInit () {
-    this.gitHubServiceProvider.getUserInfo(this.username)
+  private getUser (user) {
+    this.gitHubServiceProvider.getUserInfo(user)
     .subscribe(info => {
       this.data = info;
       console.log(this.data);
     });
+  }
+
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnInit () {
+    this.getUser(this.username);
+  }
+
+  handleSubmit (event: any): void {
+    event.preventDefault();
+    this.username = event.target.value;
+    this.getUser(this.username);
   }
 }
