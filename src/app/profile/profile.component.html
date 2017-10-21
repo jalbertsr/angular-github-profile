@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-4">
+      <div class="card hovercard">
+        <div class="cardheader">
+        </div>
+        <div class="avatar">
+          <img src={{data.avatar_url}}>
+        </div>
+        <div class="info">
+          <div class="title">
+            <a target="_blank" href={{data.url}}>{{data.name}}</a>
+          </div>
+          <div class="desc">{{data.bio}}</div>
+          <div class="desc">Repos: {{data.public_repos}}</div>
+          <div class="desc">Followers: {{data.followers}}</div>
+          <div class="desc">Following: {{data.following}}</div>
+        </div>
+        <div class="bottom">
+          <form>
+            <input type="text" class="form-control" placeholder="introduce a username...">
+          </form>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>
